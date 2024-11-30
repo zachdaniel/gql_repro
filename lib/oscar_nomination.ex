@@ -20,7 +20,7 @@ defmodule AshGraphql.Test.OscarNomination do
   end
 
   attributes do
-    uuid_primary_key :id
+    integer_primary_key :id
     attribute :title, :string, public?: true
   end
 

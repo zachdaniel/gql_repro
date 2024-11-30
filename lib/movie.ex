@@ -11,6 +11,7 @@ defmodule AshGraphql.Test.Movie do
 
     queries do
       get :get_movie, :read
+      list :get_movies, :read
     end
   end
 
@@ -25,12 +26,12 @@ defmodule AshGraphql.Test.Movie do
   end
 
   attributes do
-    uuid_primary_key :id
+    integer_primary_key :id, public?: true
 
     attribute :title, :string, public?: true
   end
 
   relationships do
-    has_one :oscar_nomination, AshGraphql.Test.OscarNomination, public?: true, from_many?: true
+    has_one :oscar_nomination, AshGraphql.Test.OscarNomination, public?: true
   end
 end
