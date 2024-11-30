@@ -31,6 +31,6 @@ defmodule AshGraphql.Test.Movie do
   end
 
   relationships do
-    has_one :oscar_nomination, AshGraphql.Test.OscarNomination, public?: true
+    has_one :oscar_nomination, AshGraphql.Test.OscarNomination, public?: true, from_many?: true
   end
 end

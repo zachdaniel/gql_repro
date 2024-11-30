@@ -29,8 +29,4 @@ defmodule AshGraphql.Test.OscarNomination do
     belongs_to :nomination_location, AshGraphql.Test.Location, public?: true, writable?: true
     belongs_to :celebration_location, AshGraphql.Test.Location, public?: true, writable?: true
   end
-
-  identities do
-    identity :unique_movie, [:movie_id]
-  end
 end

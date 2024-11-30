@@ -33,7 +33,7 @@ defmodule GqlRepro.MixProject do
   # Type `mix help deps` for examples and options.
   defp deps do
     [
-      {:ash_graphql, github: "ash-project/ash_graphql"},
+      {:ash_graphql, "~> 1.4"},
       {:ash_postgres, "~> 2.0"},
       {:ash, "~> 3.0"},
       {:igniter, "~> 0.3"},
