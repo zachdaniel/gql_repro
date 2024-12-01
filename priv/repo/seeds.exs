@@ -34,3 +34,23 @@ nomination =
     movie_id: movie.id
   )
   |> Ash.create!()
+
+outcrop =
+  Safari.Outcrop.Outcrop
+  |> Ash.Changeset.for_create(:create, [])
+  |> Ash.create!()
+
+vom =
+  Safari.Virtual.VirtualOutcropModel
+  |> Ash.Changeset.for_create(:create,
+    name: "vom 1",
+    outcrop_id: outcrop.id
+  )
+  |> Ash.create!()
+
+cesium_asset =
+  Safari.Virtual.CesiumAsset
+  |> Ash.Changeset.for_create(:create_initial_from_vom,
+    vom_id: vom.id
+  )
+  |> Ash.create!()

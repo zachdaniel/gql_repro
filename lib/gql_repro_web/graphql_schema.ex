@@ -2,7 +2,7 @@ defmodule GqlReproWeb.GraphqlSchema do
   use Absinthe.Schema
 
   use AshGraphql,
-    domains: [Domain]
+    domains: [Domain, Safari.Virtual]
 
   import_types Absinthe.Plug.Types
 

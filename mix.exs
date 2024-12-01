@@ -35,6 +35,8 @@ defmodule GqlRepro.MixProject do
     [
       {:ash_graphql, "~> 1.4"},
       {:ash_postgres, "~> 2.0"},
+      {:ash_oban, "~> 0.2"},
+      {:ash_state_machine, "~> 0.2"},
       {:ash, "~> 3.0"},
       {:igniter, "~> 0.3"},
       {:phoenix, "~> 1.7.14"},
