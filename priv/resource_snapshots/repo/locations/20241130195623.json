@@ -2,13 +2,13 @@
   "attributes": [
     {
       "allow_nil?": false,
-      "default": "fragment(\"gen_random_uuid()\")",
-      "generated?": false,
+      "default": "nil",
+      "generated?": true,
       "primary_key?": true,
       "references": null,
       "size": null,
       "source": "id",
-      "type": "uuid"
+      "type": "bigint"
     },
     {
       "allow_nil?": true,
@@ -17,7 +17,7 @@
       "primary_key?": false,
       "references": null,
       "size": null,
-      "source": "title",
+      "source": "city",
       "type": "text"
     }
   ],
@@ -26,7 +26,7 @@
   "custom_indexes": [],
   "custom_statements": [],
   "has_create_action": true,
-  "hash": "43C1FACD2D58A4327972E96D84CB4C4F06A6E61F842E61F61C09ACC594336D07",
+  "hash": "3ECCBCB317E54607FE041173D68A1BC08907710830B381E1B53ECFA24256E8C6",
   "identities": [],
   "multitenancy": {
     "attribute": null,
@@ -35,5 +35,5 @@
   },
   "repo": "Elixir.GqlRepro.Repo",
   "schema": null,
-  "table": "movies"
+  "table": "locations"
 }

@@ -1,4 +1,4 @@
-defmodule GqlRepro.Repo.Migrations.Init do
+defmodule GqlRepro.Repo.Migrations.Initial do
   @moduledoc """
   Updates resources based on their most recent snapshots.
 
@@ -9,15 +9,15 @@ defmodule GqlRepro.Repo.Migrations.Init do
 
   def up do
     create table(:oscar_nominations, primary_key: false) do
-      add :id, :uuid, null: false, default: fragment("gen_random_uuid()"), primary_key: true
+      add :id, :bigserial, null: false, primary_key: true
       add :title, :text
-      add :movie_id, :uuid
-      add :nomination_location_id, :uuid
-      add :celebration_location_id, :uuid
+      add :movie_id, :bigint
+      add :nomination_location_id, :bigint
+      add :celebration_location_id, :bigint
     end
 
     create table(:movies, primary_key: false) do
-      add :id, :uuid, null: false, default: fragment("gen_random_uuid()"), primary_key: true
+      add :id, :bigserial, null: false, primary_key: true
     end
 
     alter table(:oscar_nominations) do
@@ -25,7 +25,7 @@ defmodule GqlRepro.Repo.Migrations.Init do
              references(:movies,
                column: :id,
                name: "oscar_nominations_movie_id_fkey",
-               type: :uuid,
+               type: :bigint,
                prefix: "public"
              )
     end
@@ -35,7 +35,7 @@ defmodule GqlRepro.Repo.Migrations.Init do
     end
 
     create table(:locations, primary_key: false) do
-      add :id, :uuid, null: false, default: fragment("gen_random_uuid()"), primary_key: true
+      add :id, :bigserial, null: false, primary_key: true
     end
 
     alter table(:oscar_nominations) do
@@ -43,7 +43,7 @@ defmodule GqlRepro.Repo.Migrations.Init do
              references(:locations,
                column: :id,
                name: "oscar_nominations_nomination_location_id_fkey",
-               type: :uuid,
+               type: :bigint,
                prefix: "public"
              )
 
@@ -51,7 +51,7 @@ defmodule GqlRepro.Repo.Migrations.Init do
              references(:locations,
                column: :id,
                name: "oscar_nominations_celebration_location_id_fkey",
-               type: :uuid,
+               type: :bigint,
                prefix: "public"
              )
     end
@@ -71,8 +71,8 @@ defmodule GqlRepro.Repo.Migrations.Init do
     drop constraint(:oscar_nominations, "oscar_nominations_celebration_location_id_fkey")
 
     alter table(:oscar_nominations) do
-      modify :celebration_location_id, :uuid
-      modify :nomination_location_id, :uuid
+      modify :celebration_location_id, :bigint
+      modify :nomination_location_id, :bigint
     end
 
     drop table(:locations)
@@ -84,7 +84,7 @@ defmodule GqlRepro.Repo.Migrations.Init do
     drop constraint(:oscar_nominations, "oscar_nominations_movie_id_fkey")
 
     alter table(:oscar_nominations) do
-      modify :movie_id, :uuid
+      modify :movie_id, :bigint
     end
 
     drop table(:movies)

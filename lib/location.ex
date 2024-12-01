@@ -20,7 +20,7 @@ defmodule AshGraphql.Test.Location do
   end
 
   attributes do
-    uuid_primary_key :id
+    integer_primary_key :id
     attribute :city, :string, public?: true
   end
 end

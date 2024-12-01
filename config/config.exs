@@ -42,7 +42,7 @@ config :spark,
 
 config :gql_repro,
   ecto_repos: [GqlRepro.Repo],
-  ash_domains: [Domain],
+  ash_domains: [Domain, Safari.Virtual, Safari.Outcrop],
   generators: [timestamp_type: :utc_datetime]
 
 # Configures the endpoint

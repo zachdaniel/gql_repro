@@ -2,13 +2,13 @@
   "attributes": [
     {
       "allow_nil?": false,
-      "default": "fragment(\"gen_random_uuid()\")",
-      "generated?": false,
+      "default": "nil",
+      "generated?": true,
       "primary_key?": true,
       "references": null,
       "size": null,
       "source": "id",
-      "type": "uuid"
+      "type": "bigint"
     },
     {
       "allow_nil?": true,
@@ -47,7 +47,7 @@
       },
       "size": null,
       "source": "movie_id",
-      "type": "uuid"
+      "type": "bigint"
     },
     {
       "allow_nil?": true,
@@ -76,7 +76,7 @@
       },
       "size": null,
       "source": "nomination_location_id",
-      "type": "uuid"
+      "type": "bigint"
     },
     {
       "allow_nil?": true,
@@ -105,7 +105,7 @@
       },
       "size": null,
       "source": "celebration_location_id",
-      "type": "uuid"
+      "type": "bigint"
     }
   ],
   "base_filter": null,
@@ -113,7 +113,7 @@
   "custom_indexes": [],
   "custom_statements": [],
   "has_create_action": true,
-  "hash": "74B2AB1535FC224F57B333E2C1E4E47E97BDF78B52B82B9B1463D7A26F7333AF",
+  "hash": "C84EF79610651F22F8D7035EDBC780531EF0CA71F22547ED8E0BAAF20B50BFAB",
   "identities": [],
   "multitenancy": {
     "attribute": null,

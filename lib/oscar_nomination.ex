@@ -20,13 +20,24 @@ defmodule AshGraphql.Test.OscarNomination do
   end
 
   attributes do
-    uuid_primary_key :id
+    integer_primary_key :id
     attribute :title, :string, public?: true
   end
 
   relationships do
-    belongs_to :movie, AshGraphql.Test.Movie, public?: true, writable?: true
-    belongs_to :nomination_location, AshGraphql.Test.Location, public?: true, writable?: true
-    belongs_to :celebration_location, AshGraphql.Test.Location, public?: true, writable?: true
+    belongs_to :movie, AshGraphql.Test.Movie,
+      public?: true,
+      writable?: true,
+      attribute_type: :integer
+
+    belongs_to :nomination_location, AshGraphql.Test.Location,
+      public?: true,
+      writable?: true,
+      attribute_type: :integer
+
+    belongs_to :celebration_location, AshGraphql.Test.Location,
+      public?: true,
+      writable?: true,
+      attribute_type: :integer
   end
 end

@@ -24,7 +24,7 @@ defmodule GqlReproWeb.Router do
     forward "/playground",
             Absinthe.Plug.GraphiQL,
             schema: Module.concat(["GqlReproWeb.GraphqlSchema"]),
-            interface: :playground
+            interface: :simple
 
     forward "/",
             Absinthe.Plug,

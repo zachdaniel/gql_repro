@@ -17,7 +17,7 @@ defmodule GqlReproWeb.CoreComponents do
   use Phoenix.Component
 
   alias Phoenix.LiveView.JS
-  import GqlReproWeb.Gettext
+  use Gettext, backend: GqlRepro.Gettext
 
   @doc """
   Renders a modal.
